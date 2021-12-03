@@ -5,6 +5,9 @@ import io.pismo.test.domain.transaction.repository.OperationTypeRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+/**
+ * The type Default operation type service.
+ */
 @Service
 @AllArgsConstructor
 public class DefaultOperationTypeService implements OperationTypeService{

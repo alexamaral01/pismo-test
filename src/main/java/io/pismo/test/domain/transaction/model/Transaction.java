@@ -1,16 +1,20 @@
 package io.pismo.test.domain.transaction.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.pismo.test.domain.account.model.Account;
-import lombok.*;
-import org.springframework.data.annotation.CreatedDate;
+import lombok.AccessLevel;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.Objects;
 
 import static java.util.Objects.requireNonNull;
 
+/**
+ * The type Transaction.
+ */
 @Data
 @Entity
 @Table(name = "TRANSACTIONS")
@@ -22,6 +26,13 @@ public class Transaction {
     @SequenceGenerator(name = "transactions_seq_gen", sequenceName = "transactions_transaction_id_seq", allocationSize = 1)
     private Long transactionId;
 
+    /**
+     * Instantiates a new Transaction.
+     *
+     * @param account       the account
+     * @param operationType the operation type
+     * @param amount        the amount
+     */
     public Transaction(Account account, OperationType operationType, BigDecimal amount) {
         this.account = requireNonNull(account);
         this.operationType = requireNonNull(operationType);
@@ -39,6 +50,7 @@ public class Transaction {
 
     private BigDecimal amount;
 
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private LocalDateTime eventDate;
 
 }

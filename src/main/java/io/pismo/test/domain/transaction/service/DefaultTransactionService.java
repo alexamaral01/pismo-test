@@ -9,6 +9,9 @@ import io.pismo.test.dto.CreateTransactionCommand;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+/**
+ * The type Default transaction service.
+ */
 @Service
 @AllArgsConstructor
 public class DefaultTransactionService implements TransactionService{

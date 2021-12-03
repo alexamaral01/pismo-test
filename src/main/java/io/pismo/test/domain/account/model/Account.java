@@ -1,17 +1,16 @@
 package io.pismo.test.domain.account.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.PropertyNamingStrategies;
-import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 
 
+/**
+ * The type Account.
+ */
 @Data
 @Entity
 @Table(name = "Accounts")
@@ -27,6 +26,11 @@ public class Account{
     @NotEmpty
     private String documentNumber;
 
+    /**
+     * Instantiates a new Account.
+     *
+     * @param documentNumber the document number
+     */
     public Account(String documentNumber) {
         this.documentNumber = documentNumber;
     }

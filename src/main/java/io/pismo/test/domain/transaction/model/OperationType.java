@@ -6,6 +6,9 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+/**
+ * The type Operation type.
+ */
 @Data
 @Entity
 @Table(name = "OPERATIONS_TYPES")
@@ -23,6 +26,12 @@ public class OperationType {
     @Enumerated(EnumType.STRING)
     private TransationType transationType;
 
+    /**
+     * Instantiates a new Operation type.
+     *
+     * @param description    the description
+     * @param transationType the transation type
+     */
     public OperationType(String description, TransationType transationType) {
         this.description = description;
         this.transationType = transationType;

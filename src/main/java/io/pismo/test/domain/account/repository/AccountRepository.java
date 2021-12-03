@@ -6,10 +6,17 @@ import org.springframework.stereotype.Component;
 
 import java.util.Optional;
 
+/**
+ * The interface Account repository.
+ */
 @Component
 public interface AccountRepository extends CrudRepository<Account, Long> {
 
-
-    Optional<Account> findByDocumentNumber(String documentNumber);
+    /**
+     * Exists account by document number.
+     *
+     * @param documentNumber the document number
+     * @return the boolean
+     */
     Boolean existsByDocumentNumber(String documentNumber);
 }

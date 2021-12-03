@@ -30,7 +30,7 @@ public class SwaggerConfig {
     private ApiInfo getApiInfo() {
         return new ApiInfoBuilder()
                 .title("Pismo teste - API Doc")
-                .description("API do teste pismo")
+                .description("API do teste Pismo")
                 .version("3.0.0")
                 .build();
     }

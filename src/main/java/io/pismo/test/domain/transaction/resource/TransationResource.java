@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
 
+/**
+ * The type Transation resource.
+ */
 @RestController
 @AllArgsConstructor
 @RequestMapping("transactions")
@@ -19,6 +22,12 @@ public class TransationResource {
 
     private TransactionService transactionService;
 
+    /**
+     * Create transation response entity.
+     *
+     * @param createTransactionCommand the create transaction command
+     * @return the response entity
+     */
     @PostMapping
     public ResponseEntity<Transaction> createTransation(@RequestBody @Valid CreateTransactionCommand createTransactionCommand){
         return ResponseEntity.ok(transactionService.createTransaction(createTransactionCommand));

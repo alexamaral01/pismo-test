@@ -1,6 +1,5 @@
 package io.pismo.test.domain.account.resource;
 
-import io.pismo.test.core.resource.AbstractBaseIntegration;
 import io.restassured.RestAssured;
 import org.hamcrest.Matchers;
 import org.junit.Before;
@@ -16,7 +15,6 @@ import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 
 import static io.restassured.RestAssured.given;
-import static org.junit.jupiter.api.Assertions.*;
 
 @Testcontainers
 @RunWith(SpringRunner.class)
@@ -51,7 +49,7 @@ public class AccountResourceIntegrationTest {
     }
 
     @Test
-    public void shouldReturnAccoutWhenCreated() throws Exception {
+    public void shouldReturnAccoutWhenCreated() {
         given()
                 .contentType("application/json")
                 .body("{ \"document_number\": \"123562234\"}")
@@ -64,7 +62,7 @@ public class AccountResourceIntegrationTest {
     }
 
     @Test
-    public void shouldReturnAccoutWhenAccountId() throws Exception {
+    public void shouldReturnAccoutWhenAccountId() {
         Long accountId = given()
                 .contentType("application/json")
                 .body("{ \"document_number\": \"1235622347\"}")
