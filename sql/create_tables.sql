@@ -1,1 +1,1 @@
-CREATE DATABASE 'pismo-test-db';
+CREATE DATABASE pismo_test_db;
