@@ -27,7 +27,7 @@ public class RestExceptionHandler{
     public ResponseEntity<Error> handleBadRequest(Exception ex, WebRequest request) {
         Error error = Error.builder()
                 .withTimestamp(LocalDateTime.now())
-                .withStatus(HttpStatus.NOT_FOUND.value())
+                .withStatus(HttpStatus.BAD_REQUEST.value())
                 .withError(ex.getMessage())
                 .build();
 
