@@ -5,7 +5,6 @@
 trigger:
 - main
 
-pool: default
 
 resources:
 - repo: self
@@ -19,8 +18,7 @@ stages:
   jobs:
   - job: Build
     displayName: Build
-    pool:
-      vmImage: ubuntu-latest
+    pool: default
     steps:
     - task: Docker@2
       displayName: Build an image
